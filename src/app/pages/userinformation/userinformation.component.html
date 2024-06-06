@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center">
+  <div class="card text-center">
+      <div class="card-header bg-dark text-white">
+        User Information
+      </div>
+      <div class="card-body">
+          <form [formGroup]="form" (submit)="onSubmit()">
+            <div class="mb-3">
+              <label for="image" class="form-label">Cargar imagen:</label>
+              <input id="image" type="file" class="form-control" (change)="onFileChange($event)" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Correo Electrónico">
+            </div>
+            <div class="mb-3">
+              <label for="edad" class="form-label">Edad</label>
+              <input type="text" class="form-control" formControlName="edad" placeholder="Edad">
+            </div>
+            <div class="mb-3">
+              <label for="genero" class="form-label">Género</label>
+              <input type="text" class="form-control" formControlName="genero" placeholder="Género">
+            </div>
+              <button type="submit" class="btn btn-primary" style="background-color: black;" [disabled]="form.invalid">Guardar información</button>
+          </form>
+      </div>
+    </div>
+</div>
